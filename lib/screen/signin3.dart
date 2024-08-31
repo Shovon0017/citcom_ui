@@ -1,5 +1,6 @@
 
 
+import 'package:citcom_ui/screen/home.dart';
 import 'package:flutter/material.dart';
 
 class Signin3 extends StatefulWidget {
@@ -56,18 +57,20 @@ class _Signin3State extends State<Signin3> {
                           borderSide: const BorderSide(width: 1))),
                 ),
                 SizedBox(height: 30,),
-                Container(
-                  height: 60,
-                  width: 380,
-                  decoration: BoxDecoration(
-                      color:Color(0xffFE5A1B),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Center(child: Text("Sign In",style: TextStyle(fontSize: 25,color: Colors.white),)),
-                ),
-                SizedBox(height: 30,),
                 Center(
-                  child: Text("Don’t have an account? Sign Up"),
-                )
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(29, 58),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          backgroundColor: const Color(0xffFE5A1B)),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage()));
+                      },
+                      child: const Text("Sign in",
+                          style:
+                          TextStyle(fontSize: 20, color: Color(0xffffffff)))),
+                ),
               ],
             ),
           )

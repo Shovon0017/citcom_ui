@@ -1,4 +1,5 @@
 import 'package:citcom_ui/screen/home.dart';
+import 'package:citcom_ui/screen/logo.dart';
 import 'package:flutter/material.dart';
 void main(){
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(debugShowCheckedModeBanner: false,
-      home:HomePage(),
+      home:Logo(),
     );
   }
 }

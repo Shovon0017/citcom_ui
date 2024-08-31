@@ -1,3 +1,5 @@
+import 'package:citcom_ui/screen/signin2.dart';
+import 'package:citcom_ui/screen/signin3.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -22,34 +24,36 @@ class _LoginState extends State<Login> {
             Image.asset("images/pic11.png"),const SizedBox(
               height: 50,
             ),
-            Container(
-              height: 60,
-              width: 330,
-              decoration: BoxDecoration(
-                  color:const Color(0xffFE5A1B),
-                  borderRadius: BorderRadius.circular(10)),
-              child: const Center(child: Text("Already a Customer? Sign in",style: TextStyle(fontSize: 18,color: Colors.white),)),
-            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(29, 58),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    backgroundColor: const Color(0xffFE5A1B)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const Signin2()));
+                },
+                child: const Text("Create a Account",
+                    style:
+                    TextStyle(fontSize: 20, color: Color(0xffffffff)))),
             const SizedBox(
               height: 20,
             ),
-            SizedBox(
-                width: 330,
-                height: 60,
-              child: TextField(
-                textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  hintText: ("New to zdrop? Create an Account"),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(width: 2)),
-                ),
-              ),
-            ),
-            const SizedBox(
+             SizedBox(
               height: 20,
             ),
-            const Text("Skip Sign In")
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(29, 58),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    backgroundColor: const Color(0xffFE5A1B)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Signin3()));
+                },
+                child: const Text("Skip Sign In",
+                    style:
+                    TextStyle(fontSize: 20, color: Color(0xffffffff)))),
           ],
         ),
       ),

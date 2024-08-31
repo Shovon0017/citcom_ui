@@ -1,4 +1,5 @@
 
+import 'package:citcom_ui/screen/signin3.dart';
 import 'package:flutter/material.dart';
 
 class Signin2 extends StatefulWidget {
@@ -12,17 +13,14 @@ class _Signin2State extends State<Signin2> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(
+        title: Image.asset("images/logo11.png"),
+        centerTitle: true,
+      ),
       body: SafeArea(
           child: Container(margin: const EdgeInsets.all(10),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    const SizedBox(width: 10,),
-                    const Icon(Icons.arrow_back_ios),const SizedBox(width: 96,),
-                    Image.asset("images/logo11.png")
-                  ],
-                ),
                 const SizedBox(height: 30,),
                 const Padding(
                   padding: EdgeInsets.only(left: 15),
@@ -63,18 +61,33 @@ class _Signin2State extends State<Signin2> {
                           borderSide: const BorderSide(width: 1))),
                 ),
                 const SizedBox(height: 30,),
-                Container(
-                  height: 60,
-                  width: 380,
-                  decoration: BoxDecoration(
-                      color:const Color(0xffFE5A1B),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Center(child: Text("Sign Up",style: TextStyle(fontSize: 25,color: Colors.white),)),
-                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(29, 58),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        backgroundColor: const Color(0xffcb2127)),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const Signin3()));
+                    },
+                    child: const Text("Sign Up",
+                        style:
+                        TextStyle(fontSize: 20, color: Color(0xffffffff)))),
                 const SizedBox(height: 30,),
-                const Center(
-                  child: Text("Already have an account? Sign In"),
-                )
+                Center(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(29, 58),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          backgroundColor: const Color(0xffFE5A1B)),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const Signin3()));
+                      },
+                      child: const Text("Already have an account? Sign In",
+                          style:
+                          TextStyle(fontSize: 20, color: Color(0xffffffff)))),
+                ),
               ],
             ),
           )
